@@ -5,6 +5,7 @@ const firstOverlayContent = document.querySelector('.first');
 const secondOverlayContent = document.querySelector('.second');
 const closeBtn = document.querySelector('.closebtn');
 const body = document.querySelector('body');
+const loader = document.querySelector('.loader');
 
 firstButton.addEventListener('click', function () {
     overlay.style.width = '100%';
@@ -26,3 +27,15 @@ closeBtn.addEventListener('click', function () {
     secondOverlayContent.style.display = 'none';
     body.style.overflow = 'auto';
 });
+
+document.onreadystatechange = function () {
+    const state = document.readyState;
+    if (state == 'interactive') {
+        body.style.overflow = 'hidden';
+    } else if (state == 'complete') {
+        setTimeout(function () {
+            document.getElementById('load').style.visibility = "hidden";
+            body.style.overflow = 'auto';
+        }, 1500);
+    }
+}
