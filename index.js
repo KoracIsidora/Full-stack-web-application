@@ -7,6 +7,7 @@ const closeBtn = document.querySelector('.closebtn');
 const body = document.querySelector('body');
 const loader = document.querySelector('.loader');
 
+// First modal window
 firstButton.addEventListener('click', function () {
     overlay.style.width = '100%';
     firstOverlayContent.style.display = 'block';
@@ -14,6 +15,7 @@ firstButton.addEventListener('click', function () {
     body.style.overflow = 'hidden';
 })
 
+// Second modal window
 secondButton.addEventListener('click', function () {
     overlay.style.width = '100%';
     secondOverlayContent.style.display = 'block';
@@ -21,6 +23,7 @@ secondButton.addEventListener('click', function () {
     body.style.overflow = 'hidden';
 });
 
+// Close modal window
 closeBtn.addEventListener('click', function () {
     overlay.style.width = '0';
     firstOverlayContent.style.display = 'none';
@@ -28,6 +31,7 @@ closeBtn.addEventListener('click', function () {
     body.style.overflow = 'auto';
 });
 
+// Home page loader
 document.onreadystatechange = function () {
     const state = document.readyState;
     if (state == 'interactive') {

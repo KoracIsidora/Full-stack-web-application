@@ -15,7 +15,7 @@ if (!isset($_SESSION['loggedin'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/reset.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
   <title>Alpha by HTML5 UP</title>
 </head>
 
@@ -25,7 +25,7 @@ if (!isset($_SESSION['loggedin'])) {
   </div>
   <header>
     <nav class="flex-space">
-      <h1><a href="#" class="alpha">Alpha</a> by HTML5 UP</h1>
+      <h1><a href="#">Alpha</a> by HTML5 UP</h1>
       <ul class="flex-space">
         <li>
           <a href="#"><button class="nav-btn">Home</button></a>
@@ -34,7 +34,7 @@ if (!isset($_SESSION['loggedin'])) {
           <a href="#"><button class="nav-btn">Layouts</button></a>
         </li>
         <li>
-          <a href="#"><button class="nav-btn">Sign Up</button></a>
+          <a href="logout.php"><button class="nav-btn">Log Out</button></a>
         </li>
       </ul>
     </nav>
