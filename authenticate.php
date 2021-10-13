@@ -21,16 +21,16 @@ $a = file_get_contents("php://input");
 // Decode data from jason to a variable
 $text = json_decode($a);
 
-// Check for the name and password in the text object
-if (isset($text->name) && isset($text->password)) {
+// Check for the email and password in the text object
+if (isset($text->email) && isset($text->password)) {
 
-    // Set username and password to the name and password read from the text object
-    $username = $text->name;
+    // Set email and password to the name and password read from the text object
+    $email = $text->email;
     $password = $text->password;
 
-    // Check if the username and password variables are empty and start a query to the database
-    if ($username != '' && $password != '') {
-        $sql = "SELECT * FROM users where name ='{$username}'";
+    // Check if the email and password variables are empty and start a query to the database
+    if ($email != '' && $password != '') {
+        $sql = "SELECT * FROM users where email ='{$email}'";
         $res = mysqli_query($con, $sql);
 
         // Check if the database is not empty
@@ -38,10 +38,11 @@ if (isset($text->name) && isset($text->password)) {
             $row = mysqli_fetch_assoc($res);
 
             // Check the hashed password
+            // (password for both users in the database is: test)
             if (password_verify($password, $row['password'])) {
                 session_regenerate_id();
                 $_SESSION['loggedin'] = TRUE;
-                $_SESSION['name'] = $row['name'];
+                $_SESSION['name'] = $row['email'];
                 $_SESSION['id'] = $row['id'];
                 $arr['error'] = '';
                 $arr['message'] = 'index.php';

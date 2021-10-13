@@ -1,7 +1,7 @@
 // Creating asynchronous request to fetch the data form the authenticate file,
 // where the data is being checked in the database
 async function fetchData() {
-    let username = document.querySelector('#name').value;
+    let email = document.querySelector('#email').value;
     let password = document.querySelector('#password').value;
     const settings = {
         method: 'POST',
@@ -10,7 +10,7 @@ async function fetchData() {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            name: username,
+            email: email,
             password: password
         })
     };
